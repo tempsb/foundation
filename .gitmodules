@@ -1,0 +1,6 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/tempsb/client
+[submodule "services/api-gateway"]
+	path = services/api-gateway
+	url = https://github.com/tempsb/api-gateway
