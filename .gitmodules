@@ -4,3 +4,6 @@
 [submodule "services/api-gateway"]
 	path = services/api-gateway
 	url = https://github.com/tempsb/api-gateway
+[submodule "services/product"]
+	path = services/product
+	url = https://github.com/tempsb/product
