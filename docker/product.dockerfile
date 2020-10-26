@@ -15,5 +15,5 @@ RUN chown -R www-data:www-data /var/www
 WORKDIR /var/www
 USER www-data
 
-EXPOSE 9000 9001
+EXPOSE 9000
 CMD php artisan serve --host=0.0.0.0 --port=9000

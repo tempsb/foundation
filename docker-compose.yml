@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+
   nj_apigateway:
     hostname: gateway
     container_name: nj_gateway
@@ -45,12 +46,7 @@ services:
     networks:
       - nj_network
     ports:
-      - 9001:9001
       - 9000:9000
-
-volumes:
-  dbdata:
-  esdata:
 
 networks:
   nj_network:
