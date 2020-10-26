@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  nj_apigateway:
+    hostname: gateway
+    container_name: nj_gateway
+    build:
+      context: ./docker
+      dockerfile: apigateway.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./services/api-gateway:/var/www
+    ports:
+      - 3000:3000
+    depends_on:
+      - nj_product
+    networks:
+      - nj_network
+
+  nj_client:
+    hostname: client
+    container_name: nj_client
+    build:
+      context: ./docker
+      dockerfile: client.dockerfile
+    working_dir: /var/www
+    ports:
+      - 80:80
+    volumes:
+      - ./client/build:/var/www
+    depends_on:
+      - nj_apigateway
+    networks:
+      - nj_network
+
+  nj_product:
+    hostname: product
+    container_name: nj_product
+    build:
+      context: ./docker
+      dockerfile: product.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./services/product:/var/www
+    networks:
+      - nj_network
+    ports:
+      - 9001:9001
+      - 9000:9000
+
+volumes:
+  dbdata:
+  esdata:
+
+networks:
+  nj_network:
