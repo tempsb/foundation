@@ -1,9 +1,12 @@
 [submodule "client"]
 	path = client
 	url = https://github.com/tempsb/client
+	branch = main
 [submodule "services/api-gateway"]
 	path = services/api-gateway
 	url = https://github.com/tempsb/api-gateway
+	branch = main
 [submodule "services/product"]
 	path = services/product
 	url = https://github.com/tempsb/product
+	branch = main
