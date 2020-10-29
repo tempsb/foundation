@@ -9,6 +9,17 @@ APP_CONTAINER=nj_client
 GATEWAY_CONTAINER=nj_gateway
 PRODUCT_CONTAINER=ng_product
 
+build_packages() {
+  echo "${RED}Building Client Packages and Scripts...${RESET}"
+  cd ./client && npm install && run build ;
+  cd .. ;
+  echo "${RED}Building Gateway Packages and Scripts...${RESET}"
+  cd ./services/api-gateway && npm install ;
+  cd .. ;
+  echo "${RED}Building Product Packages ...${RESET}"
+  cd ./product && composer install && composer dump
+}
+
 docker_menu () {
   PS3="${RESET}${PINK}Select a container and press enter: ${RESET}"
   options=("Client" "Gateway" "Product" "Cancel")
@@ -46,11 +57,13 @@ select opt in "${OPTIONS[@]}"; do
     case "$REPLY" in
         1 )
             echo "${RED}Restarting Docker Containers...${RESET}"
+            build_packages ;
             docker-compose restart;
             break
             ;;
         2 )
             echo "${RED}Starting Docker Containers...${RESET}"
+            build_packages ;
             docker-compose up;
             break
             ;;
