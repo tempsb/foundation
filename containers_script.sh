@@ -11,7 +11,7 @@ PRODUCT_CONTAINER=ng_product
 
 build_packages() {
   echo "${RED}Building Client Packages and Scripts...${RESET}"
-  cd ./client && npm install && run build ;
+  cd ./client && npm install && npm run build ;
   cd .. ;
   echo "${RED}Building Gateway Packages and Scripts...${RESET}"
   cd ./services/api-gateway && npm install ;
