@@ -17,7 +17,7 @@ build_packages() {
   cd ./services/api-gateway && npm install ;
   cd .. ;
   echo "${RED}Building Product Packages ...${RESET}"
-  cd ./product && composer install && composer dump
+  cd ./product && composer install && php artisan migrate && php artisan inventory:import && php artisan orders:import:new --skipProcessing ;
 }
 
 docker_menu () {

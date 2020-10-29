@@ -26,7 +26,7 @@ services:
       dockerfile: client.dockerfile
     working_dir: /var/www
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ./client/build:/var/www
     depends_on:
