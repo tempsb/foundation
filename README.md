@@ -1,5 +1,8 @@
 # README
 
+SUPPLY CHAIN CONCEPT 
+
+
 To start the service, from a terminal run:
 `
 ./containers_script.sh
