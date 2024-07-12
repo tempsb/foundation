@@ -1,10 +1,8 @@
-# README
-
-SUPPLY CHAIN CONCEPT 
+# SUPPLY CHAIN CONCEPT 
 
 General overview and breakdown of the concepts used, and objectives of this projects can be found here: https://github.com/tempsb/foundation/blob/main/Overview.pdf
 
-
+---- 
 To start the service, from a terminal run:
 `
 ./containers_script.sh
